@@ -1,0 +1,363 @@
+
+<style>
+    /* Style for the button */
+    #theme-toggle {
+        background-color: #4070f4; /* Change to your desired color */
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+
+    /* Style when the button is hovered */
+    #theme-toggle:hover {
+        background-color: #3c68d1; /* Change to a slightly darker shade */
+    }
+
+    .profile_info_iner{
+        width: 224px;
+        position: absolute;
+        inset: 54px auto auto -186px;
+        margin: 0px; 
+        display: none;
+        background-color: ; 
+        z-index: 433;
+    }
+</style>
+
+<div id="dark_mode" data-bs-theme="light">
+
+    <nav class="sidebar">
+        <div class="logo d-flex justify-content-between">
+            <a class="large_logo" href="index.html">
+                <img src="dist/img/logo-02.png" alt class="logomode1">
+
+                <img src="dist/img/logo-03.png" alt class="logomode">
+            </a>
+
+        </div>
+
+        <ul id="menu" class="vertical-nav-menu metismenu">
+
+            <li>
+                <a ui-sref="main.home" class="cu-simple-bar__item_active"
+                    aria-expanded="false">
+                    <div class=" cu-simple-bar__item-label">
+                        <i
+                            class="icon-deoration metismenu-icon fa fa-dashboard  "></i>
+
+                        <div class="nav_title">Home</div>
+                    </div>
+
+                </a>
+            </li>
+
+            <li>
+                <a aria-expanded="false" class="has-arrow1">
+                    <i class="metismenu-icon  fas fa-database"></i>
+                    <div class="nav_title">Master</div>
+                    <i class="metismenu-state-icon fa fa-angle-down caret-left"></i>
+                </a>
+
+                <ul class="mm-collapse" style="height: 7.04px;">
+                    <li>
+                        <a ui-sref="main.business">
+                            <i class="metismenu-icon fa fa-wpforms"></i>Topics
+                        </a>
+                    </li>
+
+                    <li>
+                        <a ui-sref="main.addVehicales">
+                            <i class="metismenu-icon fa fa-file-audio-o"></i>Solutions
+                        </a>
+                    </li>
+
+                    <li ng-show="hasUserMngPermission">
+                        <a ui-sref="main.addStaff">
+                            <i class="metismenu-icon fa fa-user"></i>Permissions
+                        </a>
+                    </li>
+
+                    <li ng-show="hasUserMngPermission">
+                        <a ui-sref="main.Faq">
+                            <i class="metismenu-icon fa fa-user"></i>Roles
+                        </a>
+                    </li>
+
+                    <li ng-show="hasUserMngPermission">
+                        <a ui-sref="main.user">
+                            <i class="metismenu-icon fa fa-user"></i>Users
+                        </a>
+                    </li>
+
+                </ul>
+            </li>
+
+            <li class>
+                <a href="#" aria-expanded="false">
+                    <i class="metismenu-icon icon_align fas fa-server"></i>
+                    <div class="nav_title"> Reports </div>
+                    <i class="metismenu-state-icon fa fa-angle-down caret-left"></i>
+                </a>
+                <ul class="mm-collapse" style="height: 7.04px;">
+                    <li>
+                        <a ui-sref="main.enduser">
+                            <i class="metismenu-icon fa fa-wpforms"></i>Topic
+                            wise counts
+                        </a>
+                    </li>
+
+                    <li>
+                        <a ui-sref="main.location">
+                            <i class="metismenu-icon fa fa-wpforms"></i>Views
+                            Count Report
+                        </a>
+                    </li>
+
+                    <li>
+                        <a ui-sref="main.vehicleLocationAlert">
+                            <i class="metismenu-icon fa fa-wpforms"></i>Customer
+                            Satisfaction Report
+                        </a>
+                    </li>
+
+                </ul>
+            </li>
+            <!--            
+            <li class="">
+            <a href="#" aria-expanded="false">
+                <i class="metismenu-icon icon_align fas fa-server" ></i>
+                  <div class="nav_title"> Transactional </div>
+                
+                
+                <i class="metismenu-state-icon fa fa-angle-down caret-left" ></i>
+            </a>
+        <ul class="mm-collapse" style="height: 7.04px;">
+            <li>
+                <a ui-sref="main.business">
+                <i class="metismenu-icon fa fa-wpforms"></i>Business  Registrations
+                </a>
+            </li>
+            
+            <li>
+                <a ui-sref="main.deviceRegistration">
+                <i class="metismenu-icon  fa fa-wpforms"></i>Device Registrations
+                </a>
+            </li>
+            <li>
+                <a ui-sref="main.assetRegistration">
+                <i class="metismenu-icon fa fa-wpforms"></i>Asset Registrations
+                </a>
+            </li>
+            <li>
+                <a ui-sref="main.enduser">
+                <i class="metismenu-icon 	fa fa-wpforms"></i>EndUser Registrations
+                </a>
+            </li>
+            <li>
+                <a ui-sref="main.tag">
+                <i class="metismenu-icon fa fa-wpforms"></i>Tag Registrations
+                </a>
+            </li>
+              <li>
+                <a  ui-sref="main.addStaff">
+                <i class="metismenu-icon fa fa-user"></i> Add Staff 
+                </a>
+            </li>
+        
+              <li>
+                <a ui-sref="main.product">
+                <i class="metismenu-icon fa fa-shopping-bag"></i> Product
+                </a>
+            </li>
+           
+
+        </ul>
+
+    </li>
+                
+        -->
+
+        </ul>
+
+    </nav>
+
+    <div class="main_content dashboard_part large_header_bg">
+
+        <div class="container-fluid g-0">
+
+            <div class="row">
+                <div class="col-lg-12 p-0 ">
+                    <div
+                        class="header_iner d-flex justify-content-between align-items-center">
+
+                        <div class="line_icon open_miniSide d-none d-lg-block ">
+                            <img src="dist/img/line_img.png" alt
+                                class="iconhumberger">
+                            <img src="dist/img/hamburger-menu-icon.webp" alt
+                                style="width: 55%;height: 31px"
+                                class="iconhumberger1">
+                        </div>
+
+                        <h5 class="headertitle mr-auto ml-3">Zionit</h5>
+
+                        <div
+                            class="header_right d-flex justify-content-between align-items-center">
+                            <div
+                                class="header_notification_warp d-flex align-items-center">
+                                <div style="font-size: 1.3rem;"
+                                    class="headerusername">{{vm.user.firstName}}
+                                    {{vm.user.lastName}}</div>
+                            </div>
+
+                            <div class="profile_info" id="profile">
+                                <img src="dist/img/user.jpg"
+                                    class="profilemode1">
+
+                                <img src="dist/img/userprofile.jpg"
+                                    class="profilemode"
+                                    style="max-width: 43px;  max-height: 57px">
+
+                                <div class="profile_info_iner" id="profileopen"
+                                    style>
+                                    <div class="profile_author_name">
+                                        <h5>{{vm.user.firstName}}
+                                            {{vm.user.lastName}}</h5>
+                                    </div>
+                                    <div class="profile_info_details">
+                                        <a ui-sref="main.profile">My Profile
+                                        </a>
+
+                                        <a ng-click="vm.logout()"
+                                            data-toggle="tooltip"
+                                            data-placement="bottom" title
+                                            data-original-title="Logout">Logout</a>
+
+                                        <!-- <a href="#">Theme</a> -->
+
+                                        <div class="check-box">
+                                            <button id="theme-toggle"
+                                                onclick="toggleTheme()">Toggle
+                                                Theme</button>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div ui-view="sub">
+
+        </div>
+
+        <div class="footer_part">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="footer_iner text-center">
+                            <p>2023 � Zionit </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+<script>
+
+    $.widget.bridge('uibutton', $.ui.button)
+</script>
+
+<script src="dist/custom.js"></script>
+
+<script>
+
+
+    $(function () {
+        $('#menu').metisMenu();
+    });
+
+
+
+
+</script>
+
+<script>
+    $(document).ready(function () {
+        // Show hide popover
+        $("#profile").click(function () {
+            $(this).find("#profileopen").slideToggle("fast");
+        });
+    });
+    $(document).on("click", function (event) {
+        var $trigger = $("#profile");
+        if ($trigger !== event.target && !$trigger.has(event.target).length) {
+            $("#profileopen").slideUp("fast");
+        }
+    });
+
+       //tooltip 
+
+
+</script>
+
+<script>
+
+    $(function () {
+        $('[data-toggle="tooltip"]').tooltip()
+    })
+</script>
+
+<script>
+
+    function toggleLight() {
+        var body = document.getElementById("dark_mode");
+        var currentClass = body.className;
+        body.className = currentClass == "dark-mode" ? "light-mode" : "light-mode";
+    }
+
+    function toggleDark() {
+        var body = document.getElementById("dark_mode");
+        var currentClass = body.className;
+        body.className = currentClass == "light-mode" ? "dark-mode" : "dark-mode";
+    }
+
+    function toggleTheme() {
+            var body = document.getElementById("dark_mode");
+            var themeToggle = document.getElementById("theme-toggle");
+
+            if (body.className === "light-mode") {
+                body.className = "dark-mode";
+                themeToggle.textContent = "Light Theme ";
+            } else {
+                body.className = "light-mode";
+                themeToggle.textContent = "Dark Theme";
+            }
+        }
+
+        $(document).ready(function () {
+            $(".btn-group > .btn").click(function () {
+                $(".btn-group > .btn").removeClass("active");
+                $(this).addClass("active");
+            });
+        });
+
+    $(".btn-group > .btn").click(function () {
+        $(".btn-group > .btn").removeClass("active");
+        $(this).addClass("active");
+    });
+
+
+
+</script>
